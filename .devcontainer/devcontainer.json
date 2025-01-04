@@ -1,0 +1,32 @@
+{
+    "name": "Next.js + AWS Tools Dev Container",
+    "build": {
+      "dockerfile": "Dockerfile"
+    },
+    // Post-create command runs after the container is up. We'll do an install of dependencies here.
+    "postCreateCommand": "npm install",
+    
+    // Forward port 3000 so we can run "npm run dev" and preview it in Codespaces
+    "forwardPorts": [3000],
+    
+    // VS Code Extensions to install automatically in this dev container
+    "customizations": {
+      "vscode": {
+        "extensions": [
+          // ESLint for code linting
+          "dbaeumer.vscode-eslint",
+          // Docker extension for working with containers and images
+          "ms-azuretools.vscode-docker",
+          // Dev Containers extension (helps with local dev containers, but also recognized in Codespaces)
+          "ms-vscode-remote.remote-containers",
+          // GitHub Codespaces (optional - helps with GitHub Codespaces specific features)
+          "GitHub.github-codespaces",
+          // GitHub Repositories extension (optional - browse GitHub repos in VS Code)
+          "GitHub.remotehub",
+          // Remote Repositories extension (optional - manage remote repos seamlessly)
+          "ms-vscode.remote-repositories"
+        ]
+      }
+    }
+  }
+  
